@@ -1,0 +1,268 @@
+@import "syntax-variables";
+
+//------------------------------------------------------------------------------
+// Editor
+//------------------------------------------------------------------------------
+
+atom-text-editor, :host {
+  background-color: @background;
+  color: @foreground;
+}
+
+// The gutter is the inverse of selections
+atom-text-editor .gutter,
+:host .gutter {
+  background-color: @background;
+  color: @foreground;
+}
+atom-text-editor .line-number.cursor-line,
+:host .line-number.cursor-line {
+  // Fake blended color because Atom has "opacity: 0.6;" on this
+  color: #a0a09d;
+}
+atom-text-editor .line-number.cursor-line-no-selection,
+:host .line-number.cursor-line-no-selection {
+  background-color: darken(@selection, 3%);
+}
+atom-text-editor.is-focused .line-number.cursor-line-no-selection,
+:host(.is-focused) .line-number.cursor-line-no-selection {
+  background-color: @selection;
+}
+
+// Code
+atom-text-editor .line.cursor-line,
+:host .line.cursor-line {
+  background-color: darken(@selection, 3%);
+}
+atom-text-editor.is-focused .line.cursor-line,
+:host(.is-focused) .line.cursor-line {
+  background-color: @selection;
+}
+
+// Selection
+atom-text-editor .selection .region,
+:host .selection .region {
+  background-color: darken(@selection, 3%);
+}
+atom-text-editor.is-focused .selection .region,
+:host(.is-focused) .selection .region {
+  background-color: @selection;
+}
+
+atom-text-editor .wrap-guide,
+:host .wrap-guide {
+  background-color: @syntax-wrap-guide-color !important;
+}
+
+atom-text-editor .indent-guide,
+:host .indent-guide {
+  color: @syntax-indent-guide-color;
+  box-shadow: inset 1px 0 @syntax-indent-guide-color;
+}
+
+atom-text-editor .invisible-character,
+:host .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+atom-text-editor.is-focused .cursor,
+:host(.is-focused) .cursor {
+  border-color: @syntax-cursor-color;
+}
+
+// Atom Dark UI hack
+.theme-dark-candy {
+  .tab-bar .tab.active {
+    &[data-type$="Editor"],
+    &[data-type="MarkdownPreviewView"] {
+      background-color: @background;
+      &::after {
+        background-image: none;
+        border-bottom-color: @background;
+      }
+      .title {
+        background-color: @background;
+      }
+    }
+  }
+}
+
+//------------------------------------------------------------------------------
+// Language
+//------------------------------------------------------------------------------
+
+.comment {
+  color: @comment;
+}
+
+.string {
+  color: @yellow;
+}
+
+.constant.numeric {
+  color: @purple;
+}
+
+.constant.language {
+  color: @purple;
+}
+
+.constant.character, .constant.other {
+  color: @purple;
+}
+
+.variable {}
+
+.keyword {
+  color: @pink;
+}
+
+.storage {
+  color: @pink;
+}
+
+.storage.type {
+  font-style: italic;
+  color: @cyan;
+}
+
+.entity.name.class {
+  font-style: italic;
+  color: @green;
+}
+
+.entity.other.inherited-class {
+  font-style: italic;
+  text-decoration: underline;
+  color: @green;
+}
+
+.entity.name.function {
+  font-style: italic;
+  color: @green;
+}
+
+.variable.parameter {
+  font-style: italic;
+  color: @orange;
+}
+
+.entity.name.tag {
+  color: @pink;
+}
+
+.entity.other.attribute-name {
+  color: @green;
+}
+
+.support.function {
+  color: @cyan;
+}
+
+.support.constant {
+  color: @cyan;
+}
+
+.support.type, .support.class {
+  font-style: italic;
+  color: @cyan;
+}
+
+.support.other.variable {
+}
+
+.invalid {
+  color: @foreground;
+  background-color: @pink;
+}
+
+.invalid.deprecated {
+  color: @foreground;
+  background-color: @purple;
+}
+
+.meta.structure.dictionary.json .string.quoted.double.json {
+  color: @cyan;
+}
+
+.string.unquoted.yaml {
+  color: @foreground;
+}
+
+.meta.diff, .meta.diff.header {
+  color: @comment;
+}
+
+.markup.deleted {
+  color: @pink;
+}
+
+.markup.inserted {
+  color: @green;
+}
+
+.markup.changed {
+  color: @yellow;
+}
+
+.constant.numeric.line-number.find-in-files:not(.match) {
+  color: @purple;
+}
+
+.entity.name.filename {
+  color: @yellow;
+}
+
+.message.error {
+  color: @red;
+}
+
+.punctuation.separator.flowtype, .punctuation.section.flowtype {
+  font-weight: bold;
+}
+
+.constant.character.escape {
+  color: @pink;
+}
+
+.meta.function-call .variable.function {
+  color: @green;
+}
+
+.variable.language {
+  font-style: italic;
+  color: @cyan;
+}
+
+.punctuation.definition.string.begin.json, .punctuation.definition.string.end.json {
+  color: @foreground;
+}
+
+.meta.structure.dictionary.value.json .string.quoted.double.json {
+  color: @yellow;
+}
+
+.kewyword.operator.existential.flowtype,
+.kewyword.operator.intersection.flowtype,
+.kewyword.operator.union.flowtype,
+.keyword.operator.flowtype,
+.keyword.operator.maybe.flowtype,
+.keyword.operator.optional.parameter.flowtype,
+.meta.brace.round.close.flowtype,
+.meta.brace.round.open.flowtype,
+.meta.brace.square.end.flowtype,
+.meta.brace.square.open.flowtype,
+.punctuation.flowtype,
+.punctuation.object.end.flowtype,
+.punctuation.type.flowtype,
+.punctuation.type.separator.flowtype,
+.storage.type.extends.flowtype,
+.support.type.builtin.class.flowtype,
+.support.type.builtin.primitve.flowtype,
+.support.type.class.flowtype,
+.support.type.interface.flowtype
+.support.type.primitive.flowtype,
+.support.type.type.flowtype,
+.variable.other.property.flowtype {
+  background-color: #282c33;
+}

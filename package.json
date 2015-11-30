@@ -1,0 +1,15 @@
+{
+  "name": "dark-candy",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "dark-candy",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/zertosh/dark-candy",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

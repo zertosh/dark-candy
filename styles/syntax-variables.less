@@ -1,0 +1,43 @@
+@background: #202122;
+@selection: #33353a;
+@foreground: #f8f8f0;
+@comment: #6272a4;
+@cyan: #8be9fd;
+@green: #50fa7b;
+@orange: #ffb86c;
+@pink: #ff79c6;
+@purple: #bd93f9;
+@red: #ff5555;
+@yellow: #f1fa8c;
+
+//------------------------------------------------------------------------------
+// Atom
+//------------------------------------------------------------------------------
+
+// General colors
+@syntax-text-color: @foreground;
+@syntax-cursor-color: @foreground;
+@syntax-selection-color: @selection;
+// So Atom Dark UI doesn't make everything too dark:
+@syntax-background-color: lighten(@background, 2%);
+
+// Guide colors
+@syntax-wrap-guide-color: lighten(@background, 4%);
+@syntax-indent-guide-color: lighten(@background, 3%);
+@syntax-invisible-character-color: lighten(@background, 8%);
+
+// For find and replace markers
+@syntax-result-marker-color: #3b3a32;
+@syntax-result-marker-color-selected: @foreground;
+
+// Gutter colors
+@syntax-gutter-text-color: @foreground;
+@syntax-gutter-text-color-selected: @foreground;
+@syntax-gutter-background-color: @background;
+@syntax-gutter-background-color-selected: @background;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-renamed: @cyan;
+@syntax-color-added: @green;
+@syntax-color-modified: @yellow;
+@syntax-color-removed: @pink;
