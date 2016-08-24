@@ -7,9 +7,23 @@
     "syntax",
     "theme"
   ],
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0",
+    "vscode": "0.10.x"
+  },
   "repository": "https://github.com/zertosh/dark-candy",
   "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+  "publisher": "zertosh",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Dark Candy",
+        "uiTheme": "vs-dark",
+        "path": "./dark-candy.tmTheme"
+      }
+    ]
   }
 }
