@@ -4,69 +4,57 @@
 // Editor
 //------------------------------------------------------------------------------
 
-atom-text-editor, :host {
+atom-text-editor {
   background-color: @background;
   color: @foreground;
 }
 
 // The gutter is the inverse of selections
-atom-text-editor .gutter,
-:host .gutter {
+atom-text-editor .gutter {
   background-color: @background;
   color: @foreground;
 }
-atom-text-editor .line-number.cursor-line,
-:host .line-number.cursor-line {
+atom-text-editor .line-number.cursor-line {
   // Fake blended color because Atom has "opacity: 0.6;" on this
   color: #a0a09d;
 }
-atom-text-editor .line-number.cursor-line-no-selection,
-:host .line-number.cursor-line-no-selection {
+atom-text-editor .line-number.cursor-line {
   background-color: darken(@selection, 3%);
 }
-atom-text-editor.is-focused .line-number.cursor-line-no-selection,
-:host(.is-focused) .line-number.cursor-line-no-selection {
+atom-text-editor.is-focused .line-number.cursor-line {
   background-color: @selection;
 }
 
 // Code
-atom-text-editor .line.cursor-line,
-:host .line.cursor-line {
+atom-text-editor .line.cursor-line {
   background-color: darken(@selection, 3%);
 }
-atom-text-editor.is-focused .line.cursor-line,
-:host(.is-focused) .line.cursor-line {
+atom-text-editor.is-focused .line.cursor-line {
   background-color: @selection;
 }
 
 // Selection
-atom-text-editor .selection .region,
-:host .selection .region {
+atom-text-editor .selection .region {
   background-color: darken(@selection, 3%);
 }
-atom-text-editor.is-focused .selection .region,
-:host(.is-focused) .selection .region {
+atom-text-editor.is-focused .selection .region {
   background-color: @selection;
 }
 
-atom-text-editor .wrap-guide,
-:host .wrap-guide {
+atom-text-editor .wrap-guide {
   background-color: @syntax-wrap-guide-color !important;
 }
 
-atom-text-editor .indent-guide,
-:host .indent-guide {
+atom-text-editor .indent-guide {
   color: @syntax-indent-guide-color;
   box-shadow: inset 1px 0 @syntax-indent-guide-color;
 }
 
-atom-text-editor .invisible-character,
-:host .invisible-character {
+atom-text-editor .invisible-character {
   color: @syntax-invisible-character-color;
 }
 
-atom-text-editor.is-focused .cursor,
-:host(.is-focused) .cursor {
+atom-text-editor.is-focused .cursor {
   border-color: @syntax-cursor-color;
 }
 
