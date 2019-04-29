@@ -7,56 +7,57 @@
 atom-text-editor {
   background-color: @background;
   color: @foreground;
+
+  // The gutter is the inverse of selections
+  .gutter {
+    background-color: @background;
+    color: @foreground;
+  }
+  .line-number.cursor-line {
+    // Fake blended color because Atom has "opacity: 0.6;" on this
+    color: #a0a09d;
+  }
+  .line-number.cursor-line {
+    background-color: darken(@selection, 3%);
+  }
+  &.is-focused .line-number.cursor-line {
+    background-color: @selection;
+  }
+
+  // Code
+  .line.cursor-line {
+    background-color: darken(@selection, 3%);
+  }
+  &.is-focused .line.cursor-line {
+    background-color: @selection;
+  }
+
+  // Selection
+  .selection .region {
+    background-color: darken(@selection, 3%);
+  }
+  &.is-focused .selection .region {
+    background-color: @selection;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color !important;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+    box-shadow: inset 1px 0 @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  &.is-focused .cursor {
+    border-color: @syntax-cursor-color;
+  }
 }
 
-// The gutter is the inverse of selections
-atom-text-editor .gutter {
-  background-color: @background;
-  color: @foreground;
-}
-atom-text-editor .line-number.cursor-line {
-  // Fake blended color because Atom has "opacity: 0.6;" on this
-  color: #a0a09d;
-}
-atom-text-editor .line-number.cursor-line {
-  background-color: darken(@selection, 3%);
-}
-atom-text-editor.is-focused .line-number.cursor-line {
-  background-color: @selection;
-}
-
-// Code
-atom-text-editor .line.cursor-line {
-  background-color: darken(@selection, 3%);
-}
-atom-text-editor.is-focused .line.cursor-line {
-  background-color: @selection;
-}
-
-// Selection
-atom-text-editor .selection .region {
-  background-color: darken(@selection, 3%);
-}
-atom-text-editor.is-focused .selection .region {
-  background-color: @selection;
-}
-
-atom-text-editor .wrap-guide {
-  background-color: @syntax-wrap-guide-color !important;
-}
-
-atom-text-editor .indent-guide {
-  color: @syntax-indent-guide-color;
-  box-shadow: inset 1px 0 @syntax-indent-guide-color;
-}
-
-atom-text-editor .invisible-character {
-  color: @syntax-invisible-character-color;
-}
-
-atom-text-editor.is-focused .cursor {
-  border-color: @syntax-cursor-color;
-}
 
 // Atom Dark UI hack
 .theme-dark-candy {
